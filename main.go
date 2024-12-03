@@ -2,6 +2,7 @@ package main
 
 import (
 	"adventofcode2024/day1"
+	"adventofcode2024/day2"
 	"adventofcode2024/util"
 )
 
@@ -16,6 +17,11 @@ func Day1() {
 	PrintAnswer(result)
 }
 
+func Day2() {
+	day2.TestPart1()
+}
+
 func main() {
-	Day1()
+	// Day1()
+	Day2()
 }
