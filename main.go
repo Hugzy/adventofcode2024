@@ -18,7 +18,14 @@ func Day1() {
 }
 
 func Day2() {
-	day2.TestPart1()
+	result := day2.TestPart1()
+	Assert(result, 2)
+	result = day2.Part1(util.GetInput("resources/day2part1"))
+	PrintAnswer(result)
+	result = day2.TestPart2()
+	Assert(result, 5)
+	result = day2.Part2(util.GetInput("resources/day2part1"))
+	PrintAnswer(result)
 }
 
 func main() {
