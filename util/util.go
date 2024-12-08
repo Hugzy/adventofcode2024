@@ -2,6 +2,7 @@ package util
 
 import (
 	"os"
+	"strconv"
 	"strings"
 )
 
@@ -27,4 +28,12 @@ func ReadFile(filename string) string {
 
 func SplitFile(file string, predicate string) []string {
 	return strings.Split(file, predicate)
+}
+
+func GetInt(s string) int {
+	val, err := strconv.Atoi(s)
+	if err != nil {
+		panic(err)
+	}
+	return val
 }

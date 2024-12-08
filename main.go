@@ -3,6 +3,7 @@ package main
 import (
 	"adventofcode2024/day1"
 	"adventofcode2024/day2"
+	"adventofcode2024/day3"
 	"adventofcode2024/util"
 )
 
@@ -28,7 +29,15 @@ func Day2() {
 	PrintAnswer(result)
 }
 
+func Day3() {
+	result := day3.TestPartOne()
+	Assert(result, 161)
+	result = day3.PartOne(util.ReadFile("resources/day3part1"))
+	PrintAnswer(result)
+}
+
 func main() {
 	// Day1()
-	Day2()
+	// Day2()
+	Day3()
 }
