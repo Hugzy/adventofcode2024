@@ -4,6 +4,8 @@ import (
 	"adventofcode2024/day1"
 	"adventofcode2024/day2"
 	"adventofcode2024/day3"
+	"adventofcode2024/day4"
+	"adventofcode2024/day5"
 	"adventofcode2024/util"
 )
 
@@ -30,14 +32,31 @@ func Day2() {
 }
 
 func Day3() {
-	result := day3.TestPartOne()
-	Assert(result, 161)
-	result = day3.PartOne(util.ReadFile("resources/day3part1"))
+	/*
+		result := day3.TestPartOne()
+		Assert(result, 161)
+		result = day3.PartOne(util.ReadFile("resources/day3part1"))
+		PrintAnswer(result)
+	*/
+
+	result := day3.TestPartTwo()
+	Assert(result, 48)
+	result = day3.PartTwo(util.ReadFile("resources/day3part2"))
 	PrintAnswer(result)
+}
+
+func Day4() {
+	day4.PartOneTest()
+}
+
+func Day5() {
+	day5.PartOneTest()
 }
 
 func main() {
 	// Day1()
 	// Day2()
-	Day3()
+	// Day3()
+	// Day4()
+	Day5()
 }
