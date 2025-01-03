@@ -12,7 +12,9 @@ type rule struct {
 	second int
 }
 
-type pageUpdates struct{}
+type pageUpdate struct {
+	page []int
+}
 
 var (
 	partOneInput = `47|53
@@ -56,6 +58,15 @@ func convToInt(s string) int {
 	return i
 }
 
+func convListToInt(s []string) []int {
+	result := make([]int, 0)
+	for _, v := range s {
+		result = append(result, convToInt(v))
+	}
+
+	return result
+}
+
 func parseRules(input string) []rule {
 	lines := strings.Split(input, "\n")
 	rules := []rule{}
@@ -71,6 +82,19 @@ func parseRules(input string) []rule {
 	return rules
 }
 
+func parsePages(input string) []pageUpdate {
+	lines := strings.Split(input, "\n")
+	pageUpdates := []pageUpdate{}
+	for _, line := range lines {
+		parsed := strings.Split(line, ",")
+		pageUpdate := pageUpdate{
+			page: convListToInt(parsed),
+		}
+		pageUpdates = append(pageUpdates, pageUpdate)
+	}
+	return pageUpdates
+}
+
 func PartOneTest() {
 	PartOne(partOneInput)
 }
@@ -79,4 +103,11 @@ func PartOne(input string) {
 	split := strings.Split(input, "\n\n")
 	rules := parseRules(split[0])
 	fmt.Printf("%v", rules)
+
+	fmt.Println()
+	fmt.Println()
+	fmt.Println()
+
+	pageUpdates := parsePages(split[1])
+	fmt.Printf("%v", pageUpdates)
 }
